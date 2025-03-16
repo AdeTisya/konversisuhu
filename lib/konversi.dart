@@ -1,11 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+//import library
+import 'package:flutter/material.dart'; // membangun UI aplikasi dengan Material Design.
+import 'package:flutter/services.dart'; //membatasi input hanya angka dan simbol desimal.
 
 class TemperatureConverter extends StatefulWidget {
   @override
   _TemperatureConverterState createState() => _TemperatureConverterState();
 }
 
+//mengontrol nilai inputan pada setiap TextField.
 class _TemperatureConverterState extends State<TemperatureConverter> {
   final TextEditingController _fahrenheitController = TextEditingController();
   final TextEditingController _celsiusController = TextEditingController();
@@ -18,9 +20,10 @@ class _TemperatureConverterState extends State<TemperatureConverter> {
   final FocusNode _kelvinFocus = FocusNode();
 
   void _updateValues(String value, String unit) {
-    double? input = double.tryParse(value);
+    double? input = double.tryParse(value); //menghindari error jika pengguna memasukkan karakter non-numerik.
     if (input == null) return;
 
+  //setstate mengontrol nilai yang diinput secara otomatis
     setState(() {
       if (_fahrenheitFocus.hasFocus) {
         _celsiusController.text = ((input - 32) * 5 / 9).toStringAsFixed(2);
