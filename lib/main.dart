@@ -1,9 +1,15 @@
-// main.dart
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'Login.dart';
+import 'temperature_provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => TemperatureProvider(),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -12,9 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Konversi Suhu',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: MyLoginPage(),
     );
   }

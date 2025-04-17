@@ -12,8 +12,8 @@ class _MyLoginPageState extends State<MyLoginPage> {
   
   TextEditingController emailController = TextEditingController(); //mengambil input dari pengguna 
   TextEditingController passwordController = TextEditingController();
-  String useremail = "username@pensmail.com";
-  String pass = "123456";
+  String useremail = "adetisya15@gmail.com";
+  String pass = "123";
   String notif = " ";
 
    void login(String email, String password) {
@@ -54,7 +54,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
     
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: const Color.fromARGB(255, 255, 197, 36),
         title: const Text(
           "Log In to Your Account",
           style: TextStyle(color: Colors.black),
@@ -92,7 +92,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
                 width: 100,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                    color: Colors.green,
+                    color: const Color.fromARGB(255, 255, 187, 0),
                     borderRadius: BorderRadius.circular(20)),
                 child: Text(
                   "Login",
